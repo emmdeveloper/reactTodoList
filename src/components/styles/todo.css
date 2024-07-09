@@ -1,0 +1,48 @@
+.todo {
+  list-style-type: none;
+  display: flex;
+  padding-block: 0.65rem;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 800ms ease-in-out;
+}
+
+.toggle__btn img,
+.delete__btn img,
+.toggle__edit__icon img {
+  opacity: 0;
+}
+
+.toggle__btn img,
+.delete__btn img,
+.toggle__edit__icon img {
+  padding: 10px;
+  width: 40px;
+}
+
+.todo:hover .toggle__btn img {
+  opacity: 1;
+}
+.todo:hover .delete__btn img {
+  opacity: 1;
+}
+.todo:hover .toggle__edit__icon img {
+  opacity: 1;
+}
+
+.toggle__btn,
+.delete__btn,
+.toggle__edit__icon {
+  border: 0;
+  background: none;
+}
+.todo p {
+  font-family: Inter;
+
+  color: #050505fa;
+}
+.edit__input {
+  border: none;
+  outline: none;
+  font-family: Inter;
+}

@@ -1,0 +1,31 @@
+.todo__form {
+  display: flex;
+  padding-top: 30px;
+  width: 450px;
+  margin-inline: auto;
+  background-color: transparent;
+}
+
+.user__input {
+  outline: 0;
+
+  font-family: "Poppins";
+  border: none;
+  width: 85%;
+  background-color: #f3f3f3;
+  color: black;
+
+  padding: 15px 30px;
+}
+.todo__add__btn {
+  font-family: "Poppins";
+  border: 0;
+  padding: 12px 20px;
+  color: white;
+  white-space: nowrap;
+  background-color: #6b61dc;
+}
+
+.todo__add__btn:disabled {
+  opacity: 0.8;
+}
