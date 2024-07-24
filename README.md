@@ -30,4 +30,4 @@ To run the project in your local environment, follow these steps:
 
 ## 🐞 Issues
 
-- Right now, Todos are not stored.
+- Right now, No Bugs any more.

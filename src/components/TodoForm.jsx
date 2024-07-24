@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./styles/todoform.css";
-const TodoForm = ({ setTodoList }) => {
+const TodoForm = ({ setTodoList, todoList }) => {
   const [input, setInput] = useState("");
 
   const addTask = () => {
@@ -12,6 +12,7 @@ const TodoForm = ({ setTodoList }) => {
     };
     setTodoList((prev) => [...prev, newTodo]);
     setInput("");
+    localStorage.setItem("todoList", JSON.stringify(todoList));
   };
   return (
     <div className="todo__form">

@@ -1,15 +1,22 @@
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles/todolist.css";
 const TodoList = () => {
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(
+    JSON.parse(localStorage.getItem("todoList")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  }, [todoList]);
 
   const [showCompleted, setShowCompleted] = useState(false);
   const deleteTodo = (id) => {
     setTodoList((prevTodo) => {
       return prevTodo.filter((todo) => todo.id !== id);
     });
+    localStorage.setItem("todoList", JSON.stringify(todoList));
   };
 
   const toggle = (id) => {
@@ -21,6 +28,7 @@ const TodoList = () => {
         return todo;
       });
     });
+    localStorage.setItem("todoList", JSON.stringify(todoList));
   };
 
   function handleShowCompleted() {
@@ -31,7 +39,7 @@ const TodoList = () => {
   console.log(todoList);
   return (
     <div className="todo__container">
-      <TodoForm setTodoList={setTodoList} />
+      <TodoForm setTodoList={setTodoList} todoList={todoList} />
       {showCompleted ? (
         <ul className="todo__list">
           {todoList.length < 1 ? (
